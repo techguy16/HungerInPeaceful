@@ -3,10 +3,11 @@
   "id": "hungeronpeaceful",
   "version": "${version}",
 
-  "name": "Hunger On Peaceful",
+  "name": "Hunger In Peaceful",
   "description": "Adds the hunger mechanic to Peaceful mode.",
   "authors": [
-    "Nokko"
+    "Nokko",
+    "techguy16"
   ],
   "contact": {
     "homepage": "",
@@ -27,7 +28,7 @@
 
   "depends": {
     "fabricloader": ">=0.11.3",
-    "minecraft": "1.17.1",
+    "minecraft": "1.20.1",
     "java": ">=16"
   },
   "suggests": {
