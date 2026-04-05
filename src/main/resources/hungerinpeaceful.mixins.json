@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.nokko.hungeronpeaceful.mixin",
+  "package": "io.github.techguy16.hungerinpeaceful.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "HungerManagerMixin",

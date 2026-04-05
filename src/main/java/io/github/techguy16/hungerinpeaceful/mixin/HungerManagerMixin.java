@@ -1,4 +1,4 @@
-package me.nokko.hungeronpeaceful.mixin;
+package io.github.techguy16.hungerinpeaceful.mixin;
 
 import net.minecraft.entity.player.HungerManager;
 import net.minecraft.world.Difficulty;

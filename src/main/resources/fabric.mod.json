@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "hungeronpeaceful",
+  "id": "hungerinpeaceful",
   "version": "${version}",
 
   "name": "Hunger In Peaceful",
   "description": "Adds the hunger mechanic to Peaceful mode.",
   "authors": [
-    "Nokko",
-    "techguy16"
+    "techguy16",
+    "Nokko"
   ],
   "contact": {
     "homepage": "",
-    "sources": ""
+    "sources": "https://github.com/techguy16/HungerInPeaceful"
   },
 
   "license": "Mozilla Public License v2.0",
@@ -23,14 +23,12 @@
     ]
   },
   "mixins": [
-    "hungeronpeaceful.mixins.json"
+    "hungerinpeaceful.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.11.3",
-    "minecraft": "1.20.1",
+    "minecraft": ">=1.17.1",
     "java": ">=16"
-  },
-  "suggests": {
   }
 }
