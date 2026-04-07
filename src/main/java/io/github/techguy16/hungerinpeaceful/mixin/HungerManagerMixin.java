@@ -1,27 +1,28 @@
 package io.github.techguy16.hungerinpeaceful.mixin;
 
-import net.minecraft.entity.player.HungerManager;
+import net.minecraft.world.food.FoodData;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.Difficulty;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(HungerManager.class)
+@Mixin(FoodData.class)
 // Lnet/minecraft/entity/player/PlayerEntity;jump()V
 public abstract class HungerManagerMixin {
-	@ModifyVariable(
-			method = "update(Lnet/minecraft/entity/player/PlayerEntity;)V",
-			at = @At(
-					value = "INVOKE_ASSIGN",
-					target = "Lnet/minecraft/world/World;getDifficulty()Lnet/minecraft/world/Difficulty;"
+    @Redirect(
+        method = "tick(Lnet/minecraft/world/entity/player/Player;)V",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/level/Level;getDifficulty()Lnet/minecraft/world/Difficulty;"
 //					shift = At.Shift.AFTER
-			),
-			ordinal = 0
-	)
-	public Difficulty hungerOnPeaceful(Difficulty originalDifficulty) {
-		if (originalDifficulty.equals(Difficulty.PEACEFUL)) {
-			return Difficulty.EASY;
-		}
-		return originalDifficulty;
-	}
+        )
+    )
+    public Difficulty hungerOnPeaceful(Level level) {
+        Difficulty originalDifficulty = level.getDifficulty();
+        if (originalDifficulty.equals(Difficulty.PEACEFUL)) {
+			    return Difficulty.EASY;
+		    }
+		    return originalDifficulty;
+    }
 }
